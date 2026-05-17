@@ -30,7 +30,6 @@ export const signin = async (req, res, next) => {
 
     //  Keep res intact, strip password separately
     const { password: hashedPassword, ...userWithoutPassword } = validUser._doc;
-
     res.cookie("access_token", token, {
       httpOnly: true,
       expires: expireDate,
